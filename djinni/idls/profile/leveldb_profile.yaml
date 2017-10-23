@@ -1,0 +1,19 @@
+java:
+  out: java/cc/eevee/djinni/leveldb
+  package: cc.eevee.djinni.leveldb
+cpp:
+  out: cpp/leveldb
+  ext:
+  namespace: dd
+jni:
+  out: jni/leveldb
+objc:
+  out: objc/leveldb
+  type:
+    prefix: DD
+objcpp:
+  out: objc/leveldb
+yaml:
+  out:
+    file: leveldb.yaml
+  prefix:

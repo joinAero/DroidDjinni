@@ -1,0 +1,38 @@
+
+status = enum {
+    ok;
+    not_found;
+    corruption;
+    not_supported;
+    invalid_argument;
+    io_error;
+    not_opened;
+    not_closed;
+    unknown;
+}
+
+write_batch = interface +c {
+    static create(): write_batch;
+
+    put(key: string, value: string);
+    del(key: string);
+    clear();
+}
+
+leveldb = interface +c {
+    static create(): leveldb;
+
+    open(name: string): status;
+
+    get(key: string): string;
+    get_def(key: string, def: string): string;
+
+    put(key: string, value: string): status;
+    del(key: string): status;
+
+    write(batch: write_batch): status;
+
+    close(): status;
+
+    result(): status;
+}
