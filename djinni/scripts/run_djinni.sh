@@ -87,6 +87,8 @@ generate() {
     --ident-java-field mFooBar \
     \
     --cpp-out "$out_dir/$cpp_out" \
+    --cpp-optional-template "std::experimental::optional" \
+    --cpp-optional-header "<experimental/optional>" \
     --ident-cpp-enum-type foo_bar \
     \
     --jni-out "$out_dir/$jni_out" \
